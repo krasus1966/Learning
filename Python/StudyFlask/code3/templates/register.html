@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+    <form method="post">
+        <!-- -->
+        {{ form.csrf_token }}
+        <!--label是标题，form.user_name是定义的输入框，error是错误信息，需要遍历-->
+        {{ form.user_name.label }}
+        <p>{{ form.user_name }}</p>
+        {% for msg in form.user_name.errors %}
+         <p>{{ msg }}</p>
+        {% endfor %}
+
+        {{ form.password.label }}
+        <p>{{ form.password }}</p>
+        {% for msg in form.password.errors %}
+         <p>{{ msg }}</p>
+        {% endfor %}
+
+        {{ form.password2.label }}
+        <p>{{ form.password2 }}</p>
+        {% for msg in form.password2.errors %}
+         <p>{{ msg }}</p>
+        {% endfor %}
+
+        {{ form.submit }}
+    </form>
+</body>
+</html>
