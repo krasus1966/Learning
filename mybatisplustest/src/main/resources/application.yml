@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mp?useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 196610121
+
+logging:
+  level:
+    root: warn
+    top.krasus1966.mybatisplustest.dao: trace
+  pattern:
+    console: '%p%m%n'
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 1
+      logic-not-delete-value: 0
